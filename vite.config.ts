@@ -4,20 +4,20 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  // Базовый путь для GitHub Pages - имя твоего репозитория
-  // Замени 'pdf-canvas' на имя своего репозитория
-  base: '/pdf-canvas/',
+  // Используем относительные пути вместо абсолютных для GitHub Pages
+  base: './',
   build: {
-    // Правильные пути к ресурсам при сборке
-    assetsDir: '',
-    // Генерация относительных путей вместо абсолютных
+    // Настройки сборки для GitHub Pages
+    outDir: 'dist',
+    assetsDir: 'assets',
+    // Генерация относительных путей
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        // Настройка имен файлов без хеширования
-        entryFileNames: 'assets/[name].js',
-        chunkFileNames: 'assets/[name].js',
-        assetFileNames: 'assets/[name].[ext]'
+        // Настройка имен файлов
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   }
