@@ -2,8 +2,8 @@
 import { ref, onMounted } from 'vue'
 import PdfEmbed from 'vue-pdf-embed'
 
-// Путь к PDF файлу с учетом базового пути
-const pdfSource = ref(`${import.meta.env.BASE_URL}assets/test_pdf/exampleDoc.pdf`)
+// Путь к PDF файлу с относительным путем
+const pdfSource = ref('assets/test_pdf/exampleDoc.pdf')
 
 // Для отслеживания ширины экрана
 const isMobile = ref(false)
